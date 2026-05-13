@@ -11,19 +11,31 @@ A React + Vite MVP marketplace for healthcare and wellness services. The app use
 - Responsive mobile-first design
 
 ## Getting started
-1. Copy `.env.example` to `.env` and configure your Supabase credentials.
-2. Install dependencies:
-   ```bash
-   npm install
+
+### 1. Set up Supabase
+1. Create a new project at [supabase.com](https://supabase.com)
+2. Go to Settings > API to get your project URL and anon key
+3. Copy `.env.example` to `.env` and fill in your Supabase credentials:
    ```
-3. Run the development server:
-   ```bash
-   npm run dev
+   VITE_SUPABASE_URL=https://your-project.supabase.co
+   VITE_SUPABASE_ANON_KEY=your-anon-key
    ```
-4. Build for production:
-   ```bash
-   npm run build
-   ```
+
+### 2. Set up the database
+1. In your Supabase dashboard, go to the SQL Editor
+2. Run the SQL from `supabase-schema.sql` to create tables, policies, and triggers
+3. This will set up:
+   - User profiles with roles
+   - Services offered by professionals
+   - Availability schedules
+   - Booking requests
+   - Reviews and ratings
+
+### 3. Install and run
+```bash
+npm install
+npm run dev
+```
 
 ## Project structure
 - `src/components` — reusable UI components
@@ -38,3 +50,4 @@ A React + Vite MVP marketplace for healthcare and wellness services. The app use
 ## Notes
 - The app uses mock seed data when Supabase is not configured.
 - No payments, prescriptions, or medical records are implemented.
+- City search is restricted to Rome only.

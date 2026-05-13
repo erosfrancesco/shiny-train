@@ -32,7 +32,7 @@ export default function ProfilePage() {
         setReviews(reviewData);
         setSelectedService(serviceData[0]?.id ?? '');
       })
-      .catch((error) => showToast(error.message || 'Error loading profile', 'error'))
+      .catch((error) => showToast(error.message || 'Errore nel caricamento del profilo', 'error'))
       .finally(() => setLoading(false));
   }, [id, showToast]);
 
@@ -49,18 +49,18 @@ export default function ProfilePage() {
     });
     setBookingLoading(false);
     if (error) {
-      showToast('Unable to send booking request', 'error');
+      showToast('Impossibile inviare la richiesta di prenotazione', 'error');
       return;
     }
-    showToast('Booking request sent successfully', 'success');
+    showToast('Richiesta di prenotazione inviata con successo', 'success');
   };
 
   if (loading) {
-    return <div className="rounded-[32px] border border-slate-200 bg-white p-8 shadow-soft">Loading profile...</div>;
+    return <div className="rounded-[32px] border border-slate-200 bg-white p-8 shadow-soft">Caricamento profilo...</div>;
   }
 
   if (!profile) {
-    return <div className="rounded-[32px] border border-slate-200 bg-white p-8 shadow-soft">Profile not found.</div>;
+    return <div className="rounded-[32px] border border-slate-200 bg-white p-8 shadow-soft">Profilo non trovato.</div>;
   }
 
   return (
@@ -68,7 +68,7 @@ export default function ProfilePage() {
       <div className="space-y-8">
         <ProfileHeader profile={profile} />
         <section className="rounded-[32px] border border-slate-200 bg-white p-6 shadow-soft">
-          <h2 className="text-xl font-semibold text-slate-900">About</h2>
+          <h2 className="text-xl font-semibold text-slate-900">Informazioni</h2>
           <p className="mt-4 text-slate-600">{profile.bio}</p>
           <div className="mt-6 grid gap-3 sm:grid-cols-2">
             {profile.certifications.map((cert) => (
@@ -79,12 +79,12 @@ export default function ProfilePage() {
         <section className="space-y-5">
           <div className="flex items-center justify-between gap-4">
             <div>
-              <h2 className="text-xl font-semibold text-slate-900">Reviews</h2>
-              <p className="text-sm text-slate-500">Client feedback from recent appointments.</p>
+              <h2 className="text-xl font-semibold text-slate-900">Recensioni</h2>
+              <p className="text-sm text-slate-500">Feedback dei clienti da appuntamenti recenti.</p>
             </div>
           </div>
           <div className="grid gap-4">
-            {reviews.length === 0 ? <p className="text-slate-500">No reviews yet.</p> : reviews.map((review) => <ReviewCard key={review.id} review={review} />)}
+            {reviews.length === 0 ? <p className="text-slate-500">Ancora nessuna recensione.</p> : reviews.map((review) => <ReviewCard key={review.id} review={review} />)}
           </div>
         </section>
       </div>
@@ -92,8 +92,8 @@ export default function ProfilePage() {
         <AvailabilityCalendar availability={availability} />
         <div className="space-y-5 rounded-[32px] border border-slate-200 bg-white p-6 shadow-soft">
           <div>
-            <h2 className="text-xl font-semibold text-slate-900">Services</h2>
-            <p className="text-sm text-slate-500">Select one service for the appointment request.</p>
+            <h2 className="text-xl font-semibold text-slate-900">Servizi</h2>
+            <p className="text-sm text-slate-500">Seleziona un servizio per la richiesta di appuntamento.</p>
           </div>
           <div className="grid gap-3">
             {services.map((service) => (

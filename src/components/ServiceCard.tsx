@@ -24,7 +24,7 @@ export default function ServiceCard({ service, onSelect, selected }: ServiceCard
           {service.price_label}
         </span>
       </div>
-      <p className="mt-4 text-sm text-slate-500">Duration: {service.duration_minutes} min</p>
+      <p className="mt-4 text-sm text-slate-500">Durata: {service.duration_minutes} min</p>
     </button>
   );
 }

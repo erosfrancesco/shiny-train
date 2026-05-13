@@ -5,11 +5,13 @@ import { signOut } from '../services/authService';
 import { useToastStore } from '../store/uiStore';
 import { LucideIcon, Menu, MapPin, HeartPulse } from 'lucide-react';
 
-const navItems = [
+const publicNavItems = [
   { label: 'Home', to: '/' },
-  { label: 'Search', to: '/search' },
-  { label: 'Dashboard', to: '/dashboard' }
+  { label: 'Cerca', to: '/search' },
+  { label: 'Leggi della Sanità', to: '/sanity-laws' }
 ];
+
+const privateNavItems = [{ label: 'Dashboard', to: '/dashboard' }];
 
 export default function Navbar() {
   const user = useAuthStore((state) => state.user);
@@ -39,7 +41,7 @@ export default function Navbar() {
         </Link>
 
         <nav className="hidden gap-4 md:flex">
-          {navItems.map((item) => (
+          {publicNavItems.map((item) => (
             <NavLink
               key={item.to}
               to={item.to}
@@ -52,6 +54,20 @@ export default function Navbar() {
               {item.label}
             </NavLink>
           ))}
+          {user &&
+            privateNavItems.map((item) => (
+              <NavLink
+                key={item.to}
+                to={item.to}
+                className={({ isActive }) =>
+                  `rounded-full px-4 py-2 text-sm font-medium transition ${
+                    isActive ? 'bg-brand-100 text-brand-700' : 'text-slate-600 hover:bg-slate-100'
+                  }`
+                }
+              >
+                {item.label}
+              </NavLink>
+            ))}
         </nav>
 
         <div className="flex items-center gap-3">

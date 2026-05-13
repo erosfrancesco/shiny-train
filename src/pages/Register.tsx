@@ -21,26 +21,26 @@ export default function RegisterPage() {
       showToast(error.message, 'error');
       return;
     }
-    showToast('Account created! Continue to dashboard.', 'success');
+    showToast('Account creato! Continua alla dashboard.', 'success');
     navigate('/dashboard');
   };
 
   return (
     <div className="space-y-8 text-slate-900">
       <div>
-        <p className="text-sm uppercase tracking-[0.24em] text-brand-600">Client registration</p>
-        <h1 className="mt-4 text-3xl font-semibold">Create your CareLink account</h1>
-        <p className="mt-2 text-sm text-slate-500">Sign up to request appointments with trusted healthcare professionals.</p>
+        <p className="text-sm uppercase tracking-[0.24em] text-brand-600">Registrazione cliente</p>
+        <h1 className="mt-4 text-3xl font-semibold">Crea il tuo account CareLink</h1>
+        <p className="mt-2 text-sm text-slate-500">Registrati per richiedere appuntamenti con professionisti sanitari affidabili.</p>
       </div>
       <form onSubmit={handleSubmit} className="space-y-6 rounded-[32px] border border-slate-200 bg-white p-6 shadow-soft">
-        <label className="block text-sm font-medium text-slate-700">Full name</label>
+        <label className="block text-sm font-medium text-slate-700">Nome completo</label>
         <input
           value={fullName}
           onChange={(event) => setFullName(event.target.value)}
           required
           className="w-full rounded-3xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-900 outline-none focus:border-brand-400 focus:ring-2 focus:ring-brand-100"
         />
-        <label className="block text-sm font-medium text-slate-700">City</label>
+        <label className="block text-sm font-medium text-slate-700">Città</label>
         <input
           value={city}
           onChange={(event) => setCity(event.target.value)}
@@ -64,11 +64,11 @@ export default function RegisterPage() {
           className="w-full rounded-3xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-900 outline-none focus:border-brand-400 focus:ring-2 focus:ring-brand-100"
         />
         <button type="submit" disabled={loading} className="w-full rounded-3xl bg-brand-600 px-5 py-3 text-sm font-semibold text-white transition hover:bg-brand-700 disabled:cursor-not-allowed disabled:opacity-60">
-          {loading ? 'Creating account...' : 'Create account'}
+          {loading ? 'Creazione account...' : 'Crea account'}
         </button>
       </form>
       <p className="text-center text-sm text-slate-500">
-        Interested in offering services? <Link to="/auth/register/professional" className="font-semibold text-brand-600 hover:text-brand-700">Register as a professional</Link>
+        Interessato a offrire servizi? <Link to="/auth/register/professional" className="font-semibold text-brand-600 hover:text-brand-700">Registrati come professionista</Link>
       </p>
     </div>
   );

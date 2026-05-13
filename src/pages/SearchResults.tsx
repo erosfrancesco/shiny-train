@@ -10,34 +10,32 @@ import { FilterState, Profile } from '../types';
 export default function SearchResultsPage() {
   const [searchParams] = useSearchParams();
   const initialQuery = searchParams.get('query') ?? '';
-  const initialCity = searchParams.get('city') ?? '';
-  const [filters, setFilters] = useState<FilterState>({ query: initialQuery, category: '', city: initialCity });
+  const [filters, setFilters] = useState<FilterState>({ query: initialQuery, category: '', city: 'Rome' });
   const [results, setResults] = useState<Profile[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const debouncedQuery = useDebounce(filters.query, 350);
-  const debouncedCity = useDebounce(filters.city, 350);
 
   useEffect(() => {
     setLoading(true);
-    fetchProfiles(debouncedQuery, filters.category, debouncedCity)
+    fetchProfiles(debouncedQuery, filters.category, 'Rome')
       .then(setResults)
-      .catch((err) => setError(err.message || 'Unable to load providers'))
+      .catch((err) => setError(err.message || 'Impossibile caricare i fornitori'))
       .finally(() => setLoading(false));
-  }, [debouncedQuery, filters.category, debouncedCity]);
+  }, [debouncedQuery, filters.category]);
 
   const resultsText = useMemo(() => {
-    if (loading) return 'Searching professionals...';
+    if (loading) return 'Ricerca professionisti...';
     if (error) return error;
-    if (results.length === 0) return 'No professionals matched your search.';
-    return `${results.length} providers available`;
+    if (results.length === 0) return 'Nessun professionista corrisponde alla tua ricerca.';
+    return `${results.length} fornitori disponibili`;
   }, [error, loading, results.length]);
 
   return (
     <div className="grid gap-8 lg:grid-cols-[280px,1fr]">
       <FilterSidebar filters={filters} onChange={setFilters} />
       <div className="space-y-6">
-        <SearchBar query={filters.query} city={filters.city} onSearch={(query, city) => setFilters({ ...filters, query, city })} />
+        <SearchBar query={filters.query} onSearch={(query) => setFilters({ ...filters, query })} />
         <div className="rounded-[32px] border border-slate-200 bg-white p-6 shadow-soft">
           <p className="text-sm font-medium text-slate-700">{resultsText}</p>
         </div>

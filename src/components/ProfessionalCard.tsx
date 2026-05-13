@@ -20,7 +20,7 @@ export default function ProfessionalCard({ professional }: ProfessionalCardProps
       <div className="mt-5 grid gap-3 text-sm text-slate-600">
         <span className="inline-flex items-center gap-2">
           <Star className="h-4 w-4 text-amber-400" />
-          {professional.rating.toFixed(1)} · {professional.reviews_count} reviews
+          {professional.rating.toFixed(1)} · {professional.reviews_count} recensioni
         </span>
         <span className="inline-flex items-center gap-2">
           <MapPin className="h-4 w-4 text-slate-400" />
@@ -28,14 +28,14 @@ export default function ProfessionalCard({ professional }: ProfessionalCardProps
         </span>
         <span className="inline-flex items-center gap-2">
           <CalendarDays className="h-4 w-4 text-teal-500" />
-          Available this week
+          Disponibile questa settimana
         </span>
       </div>
       <Link
         to={`/profiles/${professional.id}`}
         className="mt-6 inline-flex items-center justify-center rounded-full bg-brand-600 px-4 py-3 text-sm font-semibold text-white transition hover:bg-brand-700"
       >
-        View profile
+        Visualizza profilo
       </Link>
     </article>
   );
