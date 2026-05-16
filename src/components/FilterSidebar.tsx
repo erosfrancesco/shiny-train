@@ -17,7 +17,7 @@ export default function FilterSidebar({ filters, onChange }: FilterSidebarProps)
           <select
             value={filters.category}
             onChange={(event) => onChange({ ...filters, category: event.target.value })}
-            className="mt-2 w-full rounded-3xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-900 outline-none focus:border-brand-400 focus:ring-2 focus:ring-brand-100"
+            className="mt-2 w-full rounded-3xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-900 outline-none focus:border-brand-400 focus:ring-2 focus:ring-brand-100 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-100"
           >
             <option value="">Tutte le categorie</option>
             {categories.map((category) => (

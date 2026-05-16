@@ -4,7 +4,7 @@ import { useAuthStore } from '@store/authStore';
 import { signOut } from '@services/authService';
 import { useToastStore } from '@store/uiStore';
 import { HeartPulse, SearchIcon, ClipboardPlusIcon } from 'lucide-react';
-
+import ThemeToggle from '@components/ThemeToggle';
 
 const publicNavItems = [
   { label: 'Home', to: '/' },
@@ -48,8 +48,7 @@ export default function Navbar() {
               key={item.to}
               to={item.to}
               className={({ isActive }) =>
-                `rounded-full px-4 py-2 text-sm font-medium transition ${isActive ? 'bg-brand-100 text-brand-700' : 'text-slate-600 hover:bg-slate-100'
-                }`
+                `rounded-full px-4 py-2 text-sm font-medium transition ${isActive ? 'bg-brand-100 text-brand-700' : 'text-slate-600 hover:bg-slate-100'}`
               }
             >
               <div className="inline-flex items-center gap-1">
@@ -64,8 +63,7 @@ export default function Navbar() {
                 key={item.to}
                 to={item.to}
                 className={({ isActive }) =>
-                  `rounded-full px-4 py-2 text-sm font-medium transition ${isActive ? 'bg-brand-100 text-brand-700' : 'text-slate-600 hover:bg-slate-100'
-                  }`
+                  `rounded-full px-4 py-2 text-sm font-medium transition ${isActive ? 'bg-brand-100 text-brand-700' : 'text-slate-600 hover:bg-slate-100'}`
                 }
               >
                 {item.label}
@@ -74,6 +72,7 @@ export default function Navbar() {
         </nav>
 
         <div className="flex items-center gap-3">
+          <ThemeToggle />
           {user ? (
             <>
               <span className="hidden rounded-full bg-blueglass px-3 py-2 text-sm text-slate-700 md:inline-flex">
