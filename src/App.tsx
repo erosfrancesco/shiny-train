@@ -5,7 +5,7 @@ import HomePage from './pages/Home';
 import SearchResultsPage from './pages/SearchResults';
 import ProfilePage from './pages/Profile';
 import DashboardPage from './pages/Dashboard';
-import SanityLawsPage from './pages/SanityLaws';
+import Resources from './pages/Resources';
 import LoginPage from './pages/Login';
 import RegisterPage from './pages/Register';
 import ProfessionalRegisterPage from './pages/ProfessionalRegister';
@@ -25,7 +25,7 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/search" element={<SearchResultsPage />} />
         <Route path="/profiles/:id" element={<ProfilePage />} />
-        <Route path="/sanity-laws" element={<SanityLawsPage />} />
+        <Route path="/risorse" element={<Resources />} />
 
         <Route
           path="/dashboard/*"

@@ -8,7 +8,7 @@ import { LucideIcon, Menu, MapPin, HeartPulse } from 'lucide-react';
 const publicNavItems = [
   { label: 'Home', to: '/' },
   { label: 'Cerca', to: '/search' },
-  { label: 'Leggi della Sanità', to: '/sanity-laws' }
+  { label: 'Risorse', to: '/risorse' }
 ];
 
 const privateNavItems = [{ label: 'Dashboard', to: '/dashboard' }];
