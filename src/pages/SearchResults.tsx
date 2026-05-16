@@ -1,11 +1,11 @@
 import { useEffect, useMemo, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
-import FilterSidebar from '../components/FilterSidebar';
-import ProfessionalCard from '../components/ProfessionalCard';
-import SearchBar from '../components/SearchBar';
-import { fetchProfiles } from '../services/profileService';
-import { useDebounce } from '../hooks/useDebounce';
-import { FilterState, Profile } from '../types';
+import FilterSidebar from '@components/FilterSidebar';
+import ProfessionalCard from '@components/ProfessionalCard';
+import SearchBar from '@components/SearchBar';
+import { fetchProfiles } from '@services/profileService';
+import { useDebounce } from '@hooks/useDebounce';
+import { FilterState, Profile } from '@codeTypes/index';
 
 export default function SearchResultsPage() {
   const [searchParams] = useSearchParams();
@@ -42,8 +42,8 @@ export default function SearchResultsPage() {
         <div className="grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
           {loading
             ? Array.from({ length: 6 }).map((_, index) => (
-                <div key={index} className="h-60 animate-pulse rounded-[32px] bg-slate-200" />
-              ))
+              <div key={index} className="h-60 animate-pulse rounded-[32px] bg-slate-200" />
+            ))
             : results.map((profile) => <ProfessionalCard key={profile.id} professional={profile} />)}
         </div>
       </div>

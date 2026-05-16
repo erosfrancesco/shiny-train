@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
-import { supabase, isSupabaseConfigured } from '../lib/supabase';
-import { useAuthStore } from '../store/authStore';
-import { fetchProfile } from '../services/authService';
+import { supabase, isSupabaseConfigured } from '@lib/supabase';
+import { useAuthStore } from '@store/authStore';
+import { fetchProfile } from '@services/authService';
 
 export function useAuth() {
   const setUser = useAuthStore((state) => state.setUser);

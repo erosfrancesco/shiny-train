@@ -1,5 +1,5 @@
 import { Star, ShieldCheck, MapPin } from 'lucide-react';
-import type { Profile } from '../types';
+import type { Profile } from '@codeTypes/index';
 
 interface ProfileHeaderProps {
   profile: Profile;

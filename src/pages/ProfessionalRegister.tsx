@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { signUpWithEmail } from '../services/authService';
-import { useToastStore } from '../store/uiStore';
+import { signUpWithEmail } from '@services/authService';
+import { useToastStore } from '@store/uiStore';
 
 export default function ProfessionalRegisterPage() {
   const [email, setEmail] = useState('');

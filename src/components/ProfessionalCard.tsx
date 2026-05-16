@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import type { Profile } from '../types';
+import type { Profile } from '@codeTypes/index';
 import { Star, MapPin, CalendarDays } from 'lucide-react';
 
 interface ProfessionalCardProps {

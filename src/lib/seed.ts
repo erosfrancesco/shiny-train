@@ -1,4 +1,4 @@
-import type { Availability, Booking, Profile, Review, Service } from '../types';
+import type { Availability, Booking, Profile, Review, Service } from '@codeTypes/index';
 
 export const sampleProfiles: Profile[] = [
   {

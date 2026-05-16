@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { useToastStore } from '../store/uiStore';
+import { useToastStore } from '@store/uiStore';
 
 export default function Toast() {
   const { message, type, visible, hideToast } = useToastStore();

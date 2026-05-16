@@ -1,4 +1,4 @@
-import type { Availability } from '../types';
+import type { Availability } from '@codeTypes/index';
 
 interface AvailabilityCalendarProps {
   availability: Availability[];

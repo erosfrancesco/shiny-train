@@ -1,5 +1,5 @@
 import { Star } from 'lucide-react';
-import type { Review } from '../types';
+import type { Review } from '@codeTypes/index';
 
 interface ReviewCardProps {
   review: Review;

@@ -1,4 +1,4 @@
-import type { FilterState } from '../types';
+import type { FilterState } from '@codeTypes/index';
 
 interface FilterSidebarProps {
   filters: FilterState;

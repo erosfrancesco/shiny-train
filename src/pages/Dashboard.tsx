@@ -1,8 +1,8 @@
 import { useEffect, useMemo, useState } from 'react';
-import { useAuthStore } from '../store/authStore';
-import { fetchBookingsForClient, fetchBookingsForProfessional, updateBookingStatus } from '../services/bookingService';
-import type { Booking } from '../types';
-import { useToastStore } from '../store/uiStore';
+import { useAuthStore } from '@store/authStore';
+import { fetchBookingsForClient, fetchBookingsForProfessional, updateBookingStatus } from '@services/bookingService';
+import type { Booking } from '@codeTypes/index';
+import { useToastStore } from '@store/uiStore';
 
 function BookingRow({ booking, onAction }: { booking: Booking; onAction?: (status: Booking['status']) => void }) {
   return (

@@ -1,6 +1,6 @@
-import { supabase, isSupabaseConfigured } from '../lib/supabase';
-import type { Profile, Review, Service, Availability } from '../types';
-import { sampleAvailability, sampleProfiles, sampleReviews, sampleServices } from '../lib/seed';
+import { supabase, isSupabaseConfigured } from '@lib/supabase';
+import type { Profile, Review, Service, Availability } from '@types';
+import { sampleAvailability, sampleProfiles, sampleReviews, sampleServices } from '@lib/seed';
 
 export async function fetchProfiles(query = '', category = '', city = '') {
   if (!isSupabaseConfigured) {

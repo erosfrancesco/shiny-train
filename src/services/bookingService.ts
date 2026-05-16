@@ -1,6 +1,6 @@
-import { supabase, isSupabaseConfigured } from '../lib/supabase';
-import type { Booking } from '../types';
-import { sampleBookings } from '../lib/seed';
+import { supabase, isSupabaseConfigured } from '@lib/supabase';
+import type { Booking } from '@types';
+import { sampleBookings } from '@lib/seed';
 
 export async function createBooking(request: Omit<Booking, 'id' | 'created_at' | 'status'>) {
   if (!isSupabaseConfigured) {

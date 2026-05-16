@@ -1,6 +1,6 @@
 import { useMemo, useState } from 'react';
-import type { Service } from '../types';
-import { useToastStore } from '../store/uiStore';
+import type { Service } from '@codeTypes/index';
+import { useToastStore } from '@store/uiStore';
 
 interface BookingFormProps {
   services: Service[];

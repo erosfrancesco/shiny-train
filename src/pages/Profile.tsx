@@ -1,14 +1,14 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import ProfileHeader from '../components/ProfileHeader';
-import AvailabilityCalendar from '../components/AvailabilityCalendar';
-import ServiceCard from '../components/ServiceCard';
-import ReviewCard from '../components/ReviewCard';
-import BookingForm from '../components/BookingForm';
-import { fetchAvailability, fetchProfileById, fetchReviews, fetchServices } from '../services/profileService';
-import { createBooking } from '../services/bookingService';
-import { useToastStore } from '../store/uiStore';
-import type { Profile, Service, Availability, Review } from '../types';
+import ProfileHeader from '@components/ProfileHeader';
+import AvailabilityCalendar from '@components/AvailabilityCalendar';
+import ServiceCard from '@components/ServiceCard';
+import ReviewCard from '@components/ReviewCard';
+import BookingForm from '@components/BookingForm';
+import { fetchAvailability, fetchProfileById, fetchReviews, fetchServices } from '@services/profileService';
+import { createBooking } from '@services/bookingService';
+import { useToastStore } from '@store/uiStore';
+import type { Profile, Service, Availability, Review } from '@codeTypes/index';
 
 export default function ProfilePage() {
   const { id } = useParams();

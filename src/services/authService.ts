@@ -1,5 +1,5 @@
-import { supabase, isSupabaseConfigured } from '../lib/supabase';
-import type { Profile, Role } from '../types';
+import { supabase, isSupabaseConfigured } from '@lib/supabase';
+import type { Profile, Role } from '@types';
 
 const fallbackProfile: Profile = {
   id: 'client-1',
